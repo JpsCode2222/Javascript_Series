@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objects</title>
+</head>
+<body>
+    
+
+    <script>
+        // objects
+        const product = {
+            name: 'Apple 15 Pro',
+            price: 150000,
+            rating:{
+                'star':4.5,
+                count:87
+            },
+            fun:function function1(){
+                console.log('function inside objects');
+            }
+        }
+
+        console.log(product.name);
+        console.log(product['price']);
+        console.log(product.fun())
+
+        // destructure
+        // console.log(product.rating)
+        const {price} = product;
+        console.log(price) 
+    </script>
+</body>
+</html>
