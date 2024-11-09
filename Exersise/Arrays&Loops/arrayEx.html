@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array Examples</title>
+</head>
+<body>
+    <script>
+        // Q1
+        const nums = [10,20,30];
+        // last index
+        let lastIndex = nums.length - 1;
+        nums[lastIndex] = 99;
+        console.log(nums);
+
+        // Q2 Last value
+        function getLastValue(arr){
+            let lastIndex = arr.length - 1;
+            return arr[lastIndex];
+        }
+
+        console.log(getLastValue(nums));
+
+        // Q3 Array Swap
+        function swapArray(arr){
+            let lastValue = arr[arr.length - 1];
+            arr[arr.length-1] = arr[0];
+            arr[0] = lastValue;
+            return arr;
+        }
+
+        console.log(swapArray(nums));
+
+        // Q4 count upto 10
+        let i = 0;
+        while(i<=10){
+            console.log(i);
+            i+=2;
+        }
+
+        for(i=5;i>=0;i--){
+            console.log(i);
+        }
+
+        function increamentByOne(arr){
+            for(var i=0;i<arr.length;i++){
+                arr[i] = arr[i] + 1;
+            }
+            return arr;
+        }
+        console.log(increamentByOne(nums))
+
+        // Q11 count positive numbers
+        let newArr = [1,23,4,3,-3,4,-4,-4];
+
+        function countPositive(newArr){
+            i = 0;
+            let count = 0;
+            while(i<newArr.length){
+                if(newArr[i] > 0){
+                    count++;
+                }
+                i++;
+            }
+            return count;
+        }
+
+        console.log(countPositive(newArr));
+
+        
+
+
+
+
+    </script>
+</body>
+</html>

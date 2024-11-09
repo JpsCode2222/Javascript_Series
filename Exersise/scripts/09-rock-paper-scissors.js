@@ -88,3 +88,22 @@ function reset(){
     displayResult.innerHTML = `Wins : ${score.wins}. Loses : ${score.loses}, Ties : ${score.ties}`;
 }
 
+let isAutoPlaying = false;
+let intervalId ;
+
+function autoPlay(){
+        if(!isAutoPlaying){
+            intervalId =  setInterval(function(){
+                let computer2Move = pickComputerMove();
+                playGame(computer2Move);
+            },1000);
+            isAutoPlaying = true;
+        }
+        else{
+            clearInterval(intervalId);
+            isAutoPlaying = false;
+        }
+}
+
+
+

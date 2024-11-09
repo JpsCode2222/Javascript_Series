@@ -1,0 +1,28 @@
+body{
+    font-family: Arial;
+}
+.js-todos,.js-todo-list{
+    display: grid;
+    grid-template-columns: 200px 180px 100px;
+    column-gap: 10px;
+    row-gap: 10px;
+}
+.js-todos{
+    margin-bottom: 10px;
+}
+input{
+    padding: 10px;
+    font-size: 20px;
+}
+.add-todo-btn,.remove-btn{
+    background-color: green;
+    border: none;
+    color: white;
+    font-size: 15px;
+}
+.title{
+    font-size: 30px;
+}
+.remove-btn{
+    background-color: red;
+}
