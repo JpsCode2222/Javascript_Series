@@ -68,7 +68,21 @@
 
         console.log(countPositive(newArr));
 
-        
+        // Q2 Filter method : create new arr
+        const mynewarr = [1,-2,3];
+        console.log(mynewarr.filter((val,ind)=>{
+            // if(val>0){
+            //     return true;
+            // }
+            // else{
+            //     return false;
+            // }
+            return val > 0;
+        }))
+
+        // Q3 Map method : map each element in arr , create new arr
+        const myarr = [1,2,4];
+        console.log(myarr.map(val=>val+10));
 
 
 

@@ -18,10 +18,16 @@ function addTodo(){
 
 function renderTodoList(){
     let todoListHTML = "";
+
+    todoList.forEach(function(todoObject,index){
+        let {name,dueDate} = todoObject;
+        todoListHTML += `<p>${name}</p><p> ${dueDate}</p> <button class="remove-btn" onclick="removeTodo(${index})">Remove</button>`;
+        
+    })
     
-    for(let i=0;i<todoList.length;i++){
-        todoListHTML += `<p>${todoList[i].name}</p><p> ${todoList[i].dueDate}</p> <button class="remove-btn" onclick="removeTodo(${i})">Remove</button>`;
-    }
+    // for(let i=0;i<todoList.length;i++){
+    //     todoListHTML += `<p>${todoList[i].name}</p><p> ${todoList[i].dueDate}</p> <button class="remove-btn" onclick="removeTodo(${i})">Remove</button>`;
+    // }
 
     let todoListElement = document.querySelector('.js-todo-list');
     todoListElement.innerHTML = todoListHTML;

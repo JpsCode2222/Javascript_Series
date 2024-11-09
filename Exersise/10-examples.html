@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advance Examples</title>
+</head>
+<body>
+
+    <button class="start-btn">Start</button>
+    <button class="add-to-cart-btn">Add to cart</button>
+    <p class="add-to-cart-msg"></p>
+
+    <button class="add-btn">Add</button>
+    <button class="remove-btn">Remove</button>
+    <script>
+        // Q1
+        const add = () => {
+            console.log(2+3);
+        }
+
+        // add();
+        // add();
+
+        // Q2
+        function runTwice(fun){
+            fun();
+            fun();
+        }
+
+        // runTwice(add);
+
+        // Q3
+        const startButton = document.querySelector('.start-btn');
+        // startButton.addEventListener('click',function(){
+        //     // setTimeout(()=>{
+        //     //     startButton.innerText = 'Finished!';
+        //     // },1000)
+        //     const intervalId = setInterval(function(){
+        //         startButton.innerText = 'Finished!';
+        //         // console.log('interval start');
+        //         clearInterval(intervalId);
+        //     },1000)
+        // })
+
+        // Q4
+        // startButton.addEventListener('click',function(){
+        //     startButton.innerText = 'Loading ...';
+        //     setInterval(function(){
+        //         startButton.innerText = 'Finished!';
+        //     },1000)
+        // })
+
+        // Q5
+
+        // solution 1
+        const addToCartButton = document.querySelector('.add-to-cart-btn');
+        const addToCartMsg = document.querySelector('.add-to-cart-msg');
+
+        // addToCartButton.addEventListener('click',function(){
+        //     addToCartMsg.innerText = "Added!";
+        //     const intervalId = setInterval(function(){
+        //         addToCartMsg.innerText = '';
+        //         clearInterval(intervalId);
+        //     },2000)
+        // })
+
+        // solution 2 : not fix yet
+
+        // addToCartButton.addEventListener('click',function(){
+        //     addToCartMsg.innerText = 'Added!';
+        //         const timeoutId = setTimeout(() => {
+        //             addToCartMsg.innerText = '';
+        //             clearTimeout(timeoutId);
+        //         }, 1500);
+        // })
+
+        // Q6
+        const title = document.querySelector('title');
+
+        let isMsgAvailable = false;
+
+        // function changeTitleEverySecond1(){
+        //     title.innerText = 'App';
+        // }
+
+        let msgCount = 0;
+
+        function changeTitleEverySecond(){
+            if(msgCount > 0){
+                if(!isMsgAvailable){
+                title.innerText = `(${msgCount}) new massages...`;
+                }else{
+                    title.innerText = "App";
+                }
+            } else{
+                title.innerText = "App";
+            }
+        }
+        
+        setInterval(function(){
+            changeTitleEverySecond();
+            isMsgAvailable = !isMsgAvailable
+        },1000)
+
+        const addButton = document.querySelector('.add-btn');
+        const removeButton = document.querySelector('.remove-btn');
+
+        addButton.addEventListener('click',function(){
+            msgCount += 1;
+        })
+
+        removeButton.addEventListener('click',function(){
+            if(msgCount>0){
+                msgCount -= 1;
+            }
+        })
+
+
+
+    </script>
+</body>
+</html>
