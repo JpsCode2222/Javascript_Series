@@ -1,3 +1,6 @@
+// way to import varible in outsorce file
+import {cart} from '../data/cart.js';
+
 let productsHTML = '';
 
 products.forEach((product)=>{
