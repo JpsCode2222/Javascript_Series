@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 12</title>
+</head>
+<body>
+    
+    
+    <script>
+        // Q1
+        const multiply = (num1,num2) => num1 * num2;
+        console.log(multiply(10,20));
+        console.log(multiply(7,10));
+
+        // Q2
+        const arr = [1,-3,5];
+        // const countPositive = (arr) => {
+        //     let count = 0;
+        //     arr.forEach((val,ind)=>{
+        //         if(val > 0){
+        //            count += 1;
+        //         }
+        //     })
+        //     return count;
+        // }
+        // console.log(countPositive(arr));
+
+
+        // Q3 
+        const addNum = (arr,num) => {
+          console.log(  arr.map((val,ind)=>val+num))
+        }
+        addNum(arr,2);
+
+        // Q4
+        const foods = ['egg','apple','egg','egg','ham'];
+
+        const removeEgg = (arr) => {
+           console.log( arr.filter((val,ind)=>{
+                if(val === 'egg'){
+                    return false;
+                }
+                return true;
+            }))
+        }
+
+        removeEgg(foods);
+
+        // Q6
+        const removeTwoEggs = (arr) => {
+            let cnt = 0;
+            console.log(
+                arr.filter((val,ind)=>{
+                    if(val === 'egg'){
+                        cnt += 1;
+                        if(cnt > 2){
+                            return true;
+                        }
+                        return false;
+                    }
+                    return true;
+                })
+            )
+        }
+
+        removeTwoEggs(foods);
+    </script>
+</body>
+</html>
