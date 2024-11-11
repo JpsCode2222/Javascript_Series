@@ -38,7 +38,6 @@ export function addToCart(productId){
       })
     }
     saveToStorage();
-    // console.log(cart);
   }
 
 export  function removeFromCart(productId){
@@ -51,5 +50,5 @@ export  function removeFromCart(productId){
     })
     cart = newCart;
     saveToStorage();
-    console.log('cart : ',cart)
   }
+

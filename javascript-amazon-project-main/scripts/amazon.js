@@ -1,9 +1,11 @@
 // way to import varible in outsorce file
-import {cart, addToCart} from '../data/cart.js';
 import {products} from '../data/products.js';
+import {cart, addToCart} from '../data/cart.js';
 import { formatCurrency } from './utils/money.js';
 
 let productsHTML = '';
+
+console.log(products);
 
 products.forEach((product)=>{
     productsHTML += `<div class="product-container">
@@ -59,7 +61,7 @@ products.forEach((product)=>{
 document.querySelector('.js-products-container').innerHTML = productsHTML;
 
 // updateCartQuantity
-function updateCartQuantity(){
+export function updateCartQuantity(){
   let cartQuantity = 0;
 
   cart.forEach((cartItem)=>{
@@ -67,16 +69,17 @@ function updateCartQuantity(){
   });
 
   document.querySelector('.js-cart-quantity').innerHTML = cartQuantity;
+  return cartQuantity;
 }
 
+updateCartQuantity();
 
-
+// addtocart 
 document.querySelectorAll('.js-add-to-cart').forEach((button)=>{
   button.addEventListener('click',()=>{
     // console.log(button.dataset.productId);  // data-product-id : productId
     let productId = button.dataset.productId;
     addToCart(productId);
     updateCartQuantity();
-    console.log('added product : '+productId)
   })
 })
