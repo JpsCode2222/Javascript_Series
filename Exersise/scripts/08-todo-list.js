@@ -41,3 +41,13 @@ function removeTodo(ind){
     localStorage.setItem('todoList',JSON.stringify(todoList))
     renderTodoList();
 }
+
+
+function getCurrentDate(){
+    const date = new Date().getDate();
+    const month = new Date().getMonth();
+    const year = new Date().getFullYear();
+    return `${year+"-"+month+"-"+date}`;
+}
+
+document.querySelector('.js-due-date').value = getCurrentDate();
